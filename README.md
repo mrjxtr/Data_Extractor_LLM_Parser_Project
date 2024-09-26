@@ -1,68 +1,67 @@
-# PubMed Clinical Trial Scraper and Analyzer
+# Clinical Trial Data Extractor with LLM Parsing
 
-This project scrapes clinical trial data from PubMed, processes it using a Large Language Model (LLM), and saves the results to a CSV file.
+This project scrapes clinical trial data from a specified website, processes it using a Large Language Model (LLM) via OpenRouter API, and exports the results to a CSV file. Designed for researchers, it simplifies the extraction and analysis of clinical trial data, providing a streamlined, customizable solution.
 
 ## Features
 
-- Scrapes clinical trial data from PubMed based on user-specified keywords typed in the terminal.
-- Processes the scraped data using the Llama 3.1 70B model via OpenRouter API.
-- Parses the LLM response and saves the processed data to a CSV file.
-- The script saves intermediate results, allowing for resumption of interrupted scraping sessions.
-- Error handling is implemented throughout the script to manage network issues and unexpected data formats.
-- The CSV output is structured to facilitate easy analysis of clinical trial data.
-- Implements rate limiting and randomized delays to respect PubMed's server load.
-- Provides real-time progress updates during the scraping and processing phases.
-- Allows users to specify the number of pages to scrape, offering flexibility in data collection.
-- Automatically creates necessary directories for storing scraped and processed data.
-- Includes a feature to get the total number of available pages for a given search query.
-- Offers robust error logging and reporting for easier debugging and maintenance.
-- Implements modular design with separate classes for scraping, processing, and data saving, enhancing code maintainability and extensibility.
+- **Customizable Scraping**: Extract clinical trial data based on user-defined keywords entered via the terminal.
+- **LLM-Powered Analysis**: Processes scraped data using advanced LLM models through OpenRouter API.
+- **CSV Output**: Generates CSV for the trial data processed from the LLM response.
+- **Data Control**: Specify the number of pages to scrape, giving control over the data volume.
+- **Page Count Detection**: Automatically retrieves the total number of pages for any search query.
+- **Automated Directory Setup**: Automatically creates required directories for storing scraped and processed data.
+- **Modular Design**: Clean architecture with separate modules for scraping, processing, and saving data, ensuring easy maintenance and scalability.
+- **Real-Time Feedback**: Displays live progress updates during both scraping and data processing phases.
+- **Error Handling**: Robust error management for network issues, unexpected data formats, and more.
 
 ## Requirements
 
 - Python 3.12.5+
-- See `requirements.txt` for Python package dependencies
+- All required packages are listed in `requirements.txt`.
 
 ## Installation
 
-1. Install the required packages:
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/mrjxtr/Clinical_Trial_Data_Extractor.git
+   cd Clinical_Trial_Data_Extractor
+   ```
+
+2. Install the required dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-2. Set up your OpenRouter API key in `src/main.py` or in your environment variables(*Recommended*).
+3. Configure your OpenRouter API key by adding it to the `.env` file or directly in `src/main.py`.
 
 ## Usage
 
-Run the main script:
+Run the script using:
 
 ```bash
 python src/main.py
 ```
 
-Follow the prompts to enter your search keyword and the number of pages to scrape.
+You will be prompted to provide a search keyword and specify the number of pages to scrape.
 
 ## Project Structure
 
-- `src/main.py`: Main script that orchestrates the scraping, processing, and saving of data
-- `src/pubmed_scraper.py`: Contains the `PubMedScraper` class for scraping PubMed
-- `src/llm_processor.py`: Contains the `LLMProcessor` class for processing data with the LLM
-- `src/data_saver.py`: Contains the `DataSaver` class for saving data to CSV
-- `src/prompts.py`: Contains the prompt template for the LLM
+- `src/main.py`: Main orchestrator for scraping, processing, and saving data.
+- `src/scraper.py`: Contains the `Scraper` class for fetching clinical trial data.
+- `src/llm_processor.py`: Implements the `LLMProcessor` class, responsible for analyzing data with the LLM.
+- `src/data_saver.py`: Saves processed data in CSV format.
+- `src/prompts.py`: Houses customizable LLM prompt templates.
 
 ## Notes
 
-- This script uses randomized delays between requests to avoid overloading the PubMed server.
-- Ensure you comply with PubMed's terms of service and usage guidelines when using this scraper.
-- The LLM processing uses the OpenRouter API. Make sure you have sufficient credits and comply with their usage terms.
-- Consider the ethical implications of scraping and analyzing medical data, especially regarding patient privacy.
-- This tool is intended for research purposes only and should not be used for medical diagnosis or treatment.
-- Regular updates may be necessary to maintain compatibility with PubMed's website structure.
-- Regular updates may be necessary to maintain compatibility with the LLM model.
-- Regular updates may be necessary to maintain compatibility with the OpenRouter API.
-- Further debugging my be needed if the LLM is not parsing the data correctly.
-- Further debugging my be needed if the data is not being saved to the CSV correctly.
-- The script is designed to be run on a single machine with a stable internet connection.
+- **Randomized Delays**: To avoid server overload, requests include randomized delays.
+- **Compliance**: Always adhere to the website's terms of service when scraping data.
+- **OpenRouter API Usage**: Ensure you have sufficient API credits and follow OpenRouter's usage policies.
+- **Ethical Considerations**: Use this tool responsibly and only for research purposes. It is not intended for medical diagnosis or treatment.
+- **Maintenance**: Updates may be needed to adapt to changes in the website, LLM models, or API specifications.
+- **Debugging**: If issues occur with LLM parsing or CSV saving, additional debugging may be required.
+- **Environment**: Ensure a stable internet connection for running the script on a single machine.
 
-Your Name - [@mrjxtr](https://github.com/mrjxtr)
+> **Important**: The current parser is optimized for "Breast Cancer" search results. You may need to modify the parser to suit other use cases. All intermediate data is stored in the `output/` directory. The parsing code is located in `src/llm_processor.py` with the `parse_llm_response` function.
