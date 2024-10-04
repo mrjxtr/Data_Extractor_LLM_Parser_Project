@@ -5,6 +5,7 @@ output/scraped-data/*
 output/response-data/*
 output/csv-data/*
 src/test_parser.py
+src/test_llm_response.py
 
 # Version 0 files
 *v0*
