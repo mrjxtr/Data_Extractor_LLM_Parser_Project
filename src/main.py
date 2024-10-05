@@ -28,11 +28,7 @@ def main():
         llm_processor = LLMProcessor(api_key=os.getenv("OPENROUTER_API_KEY"))
         data_saver = DataSaver()
 
-        all_parsed_data = {
-            "Trial Identification": [],
-            "Trial Questions": [],
-            "Group Questions": {},
-        }
+        csv_lines = []
 
         batch_size = 10
         for start_page in range(1, num_pages + 1, batch_size):
@@ -66,24 +62,19 @@ def main():
                 print("No LLM responses generated. Continuing to next batch.")
                 continue
 
-            # Step 3: Parse LLM response
-            print("Parsing LLM and saving LLM response...")
-            parsed_data = llm_processor.parse_llm_response(llm_responses)
+            # Step 3: Parse LLM response and save to CSV
+            print("Parsing LLM response and converting to CSV format...")
+            parsed_data = llm_processor.parse_llm_response(
+                trials_data
+            )  # Use trials_data directly
 
-            # Accumulate parsed data
-            print("Converting parsed data to CSV...")
-            all_parsed_data["Trial Identification"].extend(
-                parsed_data["Trial Identification"]
-            )
-            all_parsed_data["Trial Questions"].extend(parsed_data["Trial Questions"])
-            all_parsed_data["Group Questions"].update(parsed_data["Group Questions"])
-
-        # After all batches are processed, format and save the CSV
-        if all_parsed_data["Trial Identification"]:
+        # Save the CSV
+        if csv_lines:
             print("Saving results to CSV file...")
-            csv_output = llm_processor.format_parsed_data_as_csv(all_parsed_data)
             csv_filename = f"{keyword.replace(' ', '_')}_clinical_trials_data.csv"
-            data_saver.save_csv_string(csv_output, csv_filename)
+            csv_output = llm_processor.format_parsed_data_as_csv(parsed_data)
+            saved_data = data_saver.save_csv_string(csv_output, csv_filename)
+            print(saved_data)
             print(f"Results saved to {csv_filename}")
         else:
             print("No data to save.")

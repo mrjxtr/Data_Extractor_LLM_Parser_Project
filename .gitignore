@@ -1,6 +1,8 @@
 # Additional files to ignore
 Clinical_Trial_Data_Extractor(WORKING).rar
+Clinical_Trial_Data_Extractor_v1.rar
 output/desired csv output.txt
+output/desired_output.csv
 output/scraped-data/*
 output/response-data/*
 output/csv-data/*

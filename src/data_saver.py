@@ -116,3 +116,39 @@ class DataSaver:
             print(f"Error writing to file {filename}: {ioe}")
         except Exception as e:
             print(f"An unexpected error occurred while saving data: {e}")
+
+    def save_parsed_data_to_csv(self, parsed_data, filename):
+        """
+        Save the parsed LLM response data to a CSV file.
+
+        Args:
+            parsed_data (dict): A dictionary containing parsed trial data.
+            filename (str): The name of the file to save the data to.
+
+        Raises:
+            ValueError: If the data is empty or not in the expected format.
+            IOError: If there's an error writing to the file.
+        """
+        try:
+            if not parsed_data or not isinstance(parsed_data, dict):
+                raise ValueError(
+                    "Invalid data format. Expected a non-empty dictionary."
+                )
+
+            full_path = os.path.join(self.output_dir, filename)
+            os.makedirs(os.path.dirname(full_path), exist_ok=True)
+
+            with open(full_path, "w", newline="", encoding="utf-8") as f:
+                for section, data in parsed_data.items():
+                    f.write(f"{section}\n")
+                    for item in data:
+                        f.write(f"{item}\n")
+                    f.write("\n")  # Add a blank line between sections
+
+            print(f"Parsed data successfully saved to {full_path}")
+        except ValueError as ve:
+            print(f"Error: {ve}")
+        except IOError as ioe:
+            print(f"Error writing to file {filename}: {ioe}")
+        except Exception as e:
+            print(f"An unexpected error occurred while saving data: {e}")
