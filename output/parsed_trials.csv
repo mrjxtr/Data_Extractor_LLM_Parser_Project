@@ -1,0 +1,100 @@
+Trial Identification:,,,
+,,,
+1, How many Clinical Trials are there?,,
+1A,10,,
+,,,
+Trial1-Info, NA, On-treatment biopsies to predict response to neoadjuvant chemotherapy for breast cancer,297
+Trial2-Info, NCT05233800, Voice-Activated Cognitive Behavioral Therapy for Insomnia,70
+Trial3-Info, NA, Acellular Dermal Matrix without Basement Membrane in Immediate Prepectoral Breast Reconstruction,56
+Trial4-Info, NCT03021174, Pilot trial testing the effects of exercise on chemotherapy-induced peripheral neurotoxicity (CIPN) and the interoceptive brain system,19
+Trial5-Info, NCT04174599," A randomized,  multicenter phase III Study of once-per-cycle administration of efbemalenograstim alfa (F-627),  a novel long-acting rhG-CSF,  for prophylaxis of chemotherapy-induced neutropenia in patients with breast cancer",239
+Trial6-Info, NA, Machine Learning-Driven Phenogrouping and Cardiorespiratory Fitness Response in Metastatic Breast Cancer,64
+Trial7-Info, NCT02779725, Essential Components of an Electronic Patient-Reported Symptom Monitoring and Management System: A Randomized Clinical Trial,757
+Trial8-Info, NCT05468034, Exercise as part of survivorship care in metastatic breast cancer: protocol for the randomized EMBody trial, NA
+Trial9-Info, NA," Exploring the synergistic effects of vitamin D and synbiotics on cytokines profile,  and treatment response in breast cancer: a pilot randomized clinical trial",76
+Trial10-Info, NA, Predicting Long-Term Engagement in mHealth Apps: Comparative Study of Engagement Indices,240
+,,,
+,,,
+Trial Questions:,,,
+(Only Trial 1 will be answered for this pass. Subsequent trials will be answered in follow-up prompts.),,,
+,,,
+1, What is the NCT# Associated with this clinical trial?,,
+1A, NA,,
+2, What Phase is the clinical trial in?,,
+2A, NA,,
+3, What type of cancer(s) was this trial studying?,,
+3A, Breast cancer,,
+4, Describe the Cancer Type?,,
+4A, Invasive breast cancer,,
+5, Who sponsored the clinical trial?,,
+5A, NA,,
+6, What were the novel findings of this trial?,,
+6A, On-treatment biopsies can predict patients unlikely to achieve pathologic complete response (pCR) post-therapy.,,
+7, What conclusions were reached regarding this clinical trial?,,
+7A, On-treatment biopsies might offer insights into therapy resistance mechanisms.,,
+8, Is there any other relevant information that might make this clinical trial unique?,,
+8A," The trial analyzed biopsies from 297 patients with invasive breast cancer in three randomized,  prospective neoadjuvant trials.",,
+9, Were there any subgroups in this study that the clinical trial identified had heightened responses to the intervention?,,
+9A, Patients with triple-negative breast cancer (TNBC) or HER2+ breast cancer had a higher pathologic complete response (pCR) rate compared to hormone receptor-positive (HR+)/HER2- breast cancer.,,
+,,,
+,,,
+Study Groups:,,,
+Group1, GeparQuattro, None,HR+/HER2-
+Group2, GeparQuattro, None,TNBC
+Group3, GeparQuattro, None,HER2+
+Group4, GeparQuinto, None,HR+/HER2-
+Group5, GeparQuinto, None,TNBC
+Group6, GeparQuinto, None,HER2+
+Group7, GeparSixto, None,HR+/HER2-
+Group8, GeparSixto, None,TNBC
+Group9, GeparSixto, None,HER2+
+,,,
+Group Questions:,,,
+Group1-1, Is this the control group or the intervention group?,,
+Group1-1A, NA,,
+Group1-2, What drug(s) was the clinical trial studying in the this group/cohort?,,
+Group1-2A, None,,
+Group1-3, What was the Treatment ORR in this group/cohort?,,
+Group1-3A, NA,,
+Group1-4, What was the Intervention Treatment PFS in this group/cohort?,,
+Group1-4A, NA,,
+Group1-5, What was the Intervention Treatment OS in this group/cohort?,,
+Group1-5A, NA,,
+Group1-6, What percentage of patients In the intervention group discontinued?,,
+Group1-6A, NA,,
+Group1-7, Did the Group Specifically meet its endpoints?,,
+Group1-7A, NA,,
+Group1-8, Did the Group Specifically include patients who had specific stages of cancer?,,
+Group1-8A, Invasive breast cancer,,
+Group1-9, Did the Group include patients who had targets?,,
+Group1-9A, No,,
+Group1-10, Did the Group Specifically include patients who had previously taken a specific drug type?,,
+Group1-10A, NA,,
+Group1-11, Did the Group Specifically include patients who had specifically developed resistance to specific drugs?,,
+Group1-11A, NA,,
+Group1-12, Did the Group Specifically include patients who had specifically developed resistance to specific drug types?,,
+Group1-12A, NA,,
+Group1-13, Did the Group Specifically include patients who had brain brain metastases?,,
+Group1-13A, No,,
+Group1-14, Did the Group Specifically include patients who had previous surgery?,,
+Group1-14A, No,,
+Group1-15, Did the Group Specifically include patients who had “advanced” cancer?,,
+Group1-15A, No,,
+Group1-16, Did the Group Specifically include patients who had “metastatic” cancer?,,
+Group1-16A, No,,
+Group1-17, Did the Group Specifically include patients who were previously untreated?,,
+Group1-17A, NA,,
+Group1-18, Did the Group Specifically include patients who had previously taken a specific drug?,,
+Group1-18A, NA,,
+Group1-19, Did the Group Specifically include patients who had NOT previously taken a specific drug?,,
+Group1-19A, NA,,
+Group1-20," Did the Group specifically include patients who were receiving a 1st, 2nd, 3rd, 4th, 5th... Therapy?",,
+Group1-20A, NA,,
+Group1-21, Was the treatment for this group well tolerated?,,
+Group1-21A, NA,,
+Group1-22, Were the specific adverse reactions associated with this group?,,
+Group1-22A, NA,, 
+Group1-23, Has the intervention drug(s) for this group been approved?,,
+Group1-23A, NA,,
+Group1-24, What other efficacy data points were measured?,,
+Group1-24A, pCR: 27%,,
