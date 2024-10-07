@@ -2,7 +2,7 @@
 
 ## Project Summary 📝
 
-The **Clinical Trial Data Extractor with LLM Parsing** project scrapes clinical trial data from a specified website, processes it using a Large Language Model (LLM) via the OpenRouter API, and exports the results to a CSV file. This tool is designed for researchers, providing a streamlined and customizable solution for extracting and analyzing clinical trial data.
+The **Clinical Trial Data Extractor with LLM Parsing** project scrapes clinical trial data from a specified website (which will remain unnamed), processes it using a Large Language Model (LLM) via the OpenRouter API, and exports the results to a CSV file. This tool is designed for researchers, providing a streamlined and customizable solution for extracting and analyzing clinical trial data.
 
 <br />
 
